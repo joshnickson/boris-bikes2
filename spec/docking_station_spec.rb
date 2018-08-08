@@ -27,4 +27,7 @@ describe DockingStation do
     @docking_station.dock(bike)
     expect(@docking_station.bike).to eq bike
   end
+
+  it 'next test' do
+  end
 end
