@@ -31,6 +31,17 @@ describe DockingStation do
       expect(subject.capacity).to eq (DockingStation::DEFAULT_CAPACITY)
     end
 
+  describe 'initialization' do
+
+    it 'has a variable capacity' do
+      test_number = rand(50)
+      ds = DockingStation.new(test_number)
+      test_number.times { ds.dock Bike.new }
+      expect { ds.dock(Bike.new) }.to raise_error 'docking station full'
+    end
+
+  end
+
   describe '#release_bike' do
     it 'releases a bike' do
       bike = Bike.new
